@@ -19,6 +19,8 @@ alias l='ls -CF'
 alias kub="kubectl"
 alias kw="watch kubectl"
 alias kwp="watch kubectl po"
+alias ctx="kubectl ctx"
+alias ns="kubectl ns"
 alias g="git"
 
 # git aliases
@@ -26,3 +28,17 @@ git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
+
+function gitsync() {
+  message=$1
+
+  if [ -z "$message" ]; then
+    echo "Please provide commit message"
+    return 1
+  fi
+
+  git pull
+  git add .
+  git commit -m "$message"
+  git push
+}

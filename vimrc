@@ -1,5 +1,5 @@
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:indentLine_char = '⦙'
+let mapleader = ","
 
 set history=500
 
@@ -41,7 +41,7 @@ set incsearch
 set showmatch 
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=2
 
 " Enable syntax highlighting
 syntax enable
@@ -53,33 +53,24 @@ endif
 
 set background=dark
 
-" Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" Turn backup off, since most stuff is in SVN, git etc. anyway...
+" Turn backup off
 set nobackup
 set nowb
 set noswapfile
 
-" Use spaces instead of tabs
+" Spaces
 set expandtab
-
-" Be smart when using tabs ;)
 set smarttab
-
-" 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
-
-" Linebreak on 500 characters
 set lbr
 set tw=500
-
 set ai "Auto indent
-
 set number
 
 " Plugins
@@ -93,3 +84,18 @@ call plug#end()
 
 let g:ctrlp_map = '<c-p>'
 colorscheme gruvbox
+
+" Maps
+nnoremap <leader>n tabnext
+nnoremap <leader>p tabprevious
+
+" File type settings
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
