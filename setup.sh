@@ -10,3 +10,4 @@ ln -s ~/configs/bashrc ~/.bashrc || true
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+
