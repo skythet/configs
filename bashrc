@@ -11,7 +11,7 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PATH=$PATH:/usr/local/go/bin:~/.local/bin
+export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/.krew/bin
 
 alias ll='ls -alF'
 alias la='ls -A'
