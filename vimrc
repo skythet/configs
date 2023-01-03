@@ -34,16 +34,10 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Ignore case when searching
+" Search config
 set ignorecase
-
-" Highlight search results
 set hlsearch
-
-" Makes search act like search in modern browsers
 set incsearch
-
-" Show matching brackets when text indicator is over them
 set showmatch 
 
 " Add a bit extra margin to the left
@@ -94,7 +88,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
