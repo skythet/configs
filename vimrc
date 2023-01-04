@@ -79,6 +79,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
+Plug 'hashivim/vim-terraform'
+Plug 'towolf/vim-helm'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -86,8 +89,8 @@ let g:ctrlp_map = '<c-p>'
 colorscheme gruvbox
 
 " Maps
-nnoremap <leader>n tabnext
-nnoremap <leader>p tabprevious
+nnoremap <leader>tn tabnext
+nnoremap <leader>tp tabprevious
 
 " File type settings
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -99,3 +102,12 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+" Nerd tree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif

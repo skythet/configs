@@ -22,6 +22,7 @@ alias kwp="watch kubectl po"
 alias ctx="kubectl ctx"
 alias ns="kubectl ns"
 alias g="git"
+alias vimf="vim \$(fzf)"
 
 # git aliases
 git config --global alias.co checkout
